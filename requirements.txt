@@ -4,3 +4,4 @@ numpy
 geopy
 flask
 scikit-learn
+wfastcgi

@@ -1,14 +1,17 @@
 @echo off
 
-REM Activa el entorno virtual usando la ruta absoluta
-call .\PMRouting\PMRoutingEnv\Scripts\activate
+REM Cambia al directorio donde reside este script
+cd /d %~dp0
+
+REM Activa el entorno virtual usando la ruta relativa
+call PMRoutingEnv\Scripts\activate
 
 REM Instala las dependencias
-pip install -r .\PMRouting\requirements.txt
+pip install -r requirements.txt
 
 wfastcgi-enable
 
 REM Ejecuta tu API
-python .\PMRouting\run.py
+python run.py
 
 pause
